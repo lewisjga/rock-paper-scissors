@@ -8,9 +8,63 @@
     <style src="./styles/styles.css"></style>
 </head>
 <body>
-    <p console.log="hello World?">a</p>
     <script>
-        console.log("hello world");
+        function getComputerChoice(){
+            let choice = ''
+            let choiceCode = Math.floor(Math.random()*3);
+            console.log(choiceCode);
+            switch(choiceCode) {
+                case 0:
+                    choice = 'rock';
+                    break;
+                case 1:
+                    choice = 'scissors';
+                    break;
+                case 2:
+                    choice = 'paper';
+                    break;
+                default:
+                    console.log('Your code sucks');
+                    break;
+            }
+            console.log(choice)
+            return choice; 
+        }
+
+        function playBall(computerSelection, playerSelection){
+            let playerSelection = playerSelection.toLowerCase();
+            if (playerSelection = 'rock') {
+                switch(oppChoice) {
+                    case (computerSelection = 'rock'):
+                        console.log("It's a tie. You both picked rock.");
+                        break;
+                    case (computerSelection = 'scissors'):
+                        console.log("Rock beats scissors, you win!");
+                        break;
+                    case (computerSelection = 'paper'):
+                        console.log("Paper beats rock, you lose!");
+                        break;
+                    default:
+                        console.log("You messed up.");
+                        break;
+                }
+            if (playerSelection = 'scissors') {
+            switch(oppChoice) {
+                case (computerSelection = 'rock'):
+                    console.log("Rock beats scissors, you lose!");
+                    break;
+                case (computerSelection = 'scissors'):
+                    console.log("It's a tie. You both picked scissors.");
+                    break;
+                case (computerSelection = 'paper'):
+                    console.log("Scissors beats paper, you win!");
+                    break;
+                default:
+                    console.log("You messed up.");
+                    break;
+            }
+            }
+        }
     </script>
 </body>
 </html>
