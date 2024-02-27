@@ -1,5 +1,15 @@
 //randomly generates a selection of either rock, scissors, or paper to be compared to player choice
 
+let playerChoice = '';
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerChoice = button.id;
+        console.log(playerChoice);
+    })
+})
+
 function getComputerChoice(){
     let choice = ''
     let choiceCode = Math.floor(Math.random()*3);

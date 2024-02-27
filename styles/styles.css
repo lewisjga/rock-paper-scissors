@@ -3,32 +3,27 @@
     justify-content: center;
 }
 
-.fight-select {
+.flex-list {
     display: flex;
     flex-flow: row wrap;
     list-style: none;
     gap: 2.5em;
 }
 
-/*
-.fighter {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: x-large;
-    width: 10em;
-    align-content: center;
-    justify-content: center;
+.scores {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
 }
-
-.fighter:after{
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-}
-*/
 
 .fighter {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: x-large;
     width: 10em;
     height: 10em;
+}
+
+#results {
+    display: flex;
+    justify-content: center;
 }

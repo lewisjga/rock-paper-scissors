@@ -8,15 +8,24 @@
 </head>
 <body>
     <div id="buttons">
-        <ul class="fight-select">
-            <li><button class="fighter">Rock</button></li>
-            <li><button class="fighter">Paper</button></li>
-            <li><button class="fighter">Scissors</button></li>
+        <ul class="flex-list">
+            <li><button class="fighter" id="rock">Rock</button></li>
+            <li><button class="fighter" id="paper">Paper</button></li>
+            <li><button class="fighter" id="scissors">Scissors</button></li>
         </ul>
     </div>
 
     <div id="results">
-        
+        <ul class="flex-list">
+            <li><div class="scores">
+                <h2>Player</h2>
+                <p id="player-score" style="font-size: x-large;">0</p>
+            </div></li>
+            <li><div class="scores">
+                <h2>Computer</h2>
+                <p id="comp-score" style="font-size: x-large;">0</p>
+            </div></li>
+        </ul>
     </div>
     <script src="./js/scripts.js"></script>
 </body>
