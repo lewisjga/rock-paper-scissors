@@ -23,7 +23,16 @@
     height: 10em;
 }
 
+#round {
+    display: flex;
+    flex-flow: column;   
+}
+
 #results {
     display: flex;
     justify-content: center;
+}
+
+p {
+    align-self: center;
 }

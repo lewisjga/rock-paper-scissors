@@ -1,11 +1,20 @@
 //randomly generates a selection of either rock, scissors, or paper to be compared to player choice
 
 let playerChoice = '';
+let playerScore = 0;
+let compScore = 0;
+let playCount = 0;
 const buttons = document.querySelectorAll('button');
+const activeRound = document.getElementById('round');
+const playerScoreTrack = document.getElementById('player-score');
+const compScoreTrack = document.getElementById('comp-score');
+const playerPara = document.createElement('p');
+const compPara = document.createElement('p');
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
         playerChoice = button.id;
+        playThrough(playerChoice);
         console.log(playerChoice);
     })
 })
@@ -104,18 +113,19 @@ function playBall(choicePly, choiceCpu){
 
 //Plays game through five times and declares a victor.
 
-/*
 function playThrough(playerSelection){
-    let playerScore = 0;
-    let compScore = 0;
-
-    //game loop and scoring mechanism
-
-    for (let i = 0; i < 5; i++) {
+    if (playCount < 5) {
+        activeRound.innerHTML = '';
+        playerPara.innerHTML = '';
+        compPara.innerHTML = '';
+        playCount++;
         let computerSelection = getComputerChoice();
-        let playerSelection = prompt("Choose your attack");
-        console.log(`Computer selected: ${computerSelection}`);
-        console.log(`Player selected: ${playerSelection}`);
+        const playerMsg = document.createTextNode(`Player selected: ${playerSelection}`);
+        const compMsg = document.createTextNode(`Computer selected: ${computerSelection}`);
+        playerPara.appendChild(playerMsg);
+        compPara.appendChild(compMsg);
+        activeRound.appendChild(playerPara);
+        activeRound.appendChild(compPara);
 
         let results = [];
         currentLead = '';
@@ -127,9 +137,11 @@ function playThrough(playerSelection){
         if (results[1] === 'player') {
             playerScore += 1;
             console.log('Player score increased by one.');
+            playerScoreTrack.textContent = `${playerScore}`;
         } else if (results[1] === 'computer') {
             compScore += 1;
             console.log('Computer score increased by one.');
+            compScoreTrack.textContent = `${compScore}`;
         } else if (results[1] === 'tie') {
             console.log('Tie, no change.');
         }
@@ -141,17 +153,20 @@ function playThrough(playerSelection){
         } else {
             currentLead = 'tie'
         }
-    }  
+    } else {
+        playCount = 0;
+        compScore = 0;
+        playerScore = 0
 
-    //track current leader/winner
+        playerScoreTrack.textContent = `${playerScore}`;
+        compScoreTrack.textContent = `${compScore}`;
 
-    if (currentLead === 'tie') {
-            return("No one wins.");
+        if (currentLead === 'tie') {
+            alert("No one wins.")
         } else {
-            return(`The victor is the ${currentLead}!`);
+            alert(`The victor is the ${currentLead}!`);
         }
 
+        console.log("Resetting...")
+    }   
 }
-
-alert(playThrough());
-*/
